@@ -3,7 +3,6 @@ const { default: Axios, default: axios } = require("axios");
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 const cheerio = require('cheerio');
 const { API, } = require('nhentai-api');
-const Canvacord = require("canvacord");
 const dailySchema = require('../../schemas/daily-schema')
 
 let embed = new MessageEmbed;
