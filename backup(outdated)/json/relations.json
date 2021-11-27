@@ -1,0 +1,9 @@
+{
+    "relations": {},
+    "Totalatomic": {
+        "partner": "Bael"
+    },
+    "Bael": {
+        "partner": "Totalatomic"
+    }
+}

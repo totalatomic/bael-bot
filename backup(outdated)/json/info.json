@@ -1,0 +1,59 @@
+{
+    "infobot": [
+        "info version",
+        "info creator",
+        "info commands"
+    ],
+    "allcomands": {
+        "info_commands": [
+            "info version",
+            "info creator"
+        ],
+        "useful_commands": [
+            "av",
+            "poll",
+            "ping",
+            "convert <lbtokg/kgtolb/ftoc/ctof/mtoft/fttom/utodv> <number>",
+            "e <emoteName>"
+        ],
+        "reaction_gifs": [
+            "shrug",
+            "smug",
+            "cry",
+            "declare communism",
+            "hug",
+            "sip",
+            "yamero",
+            "tsun",
+            "rice",
+            "sleep",
+            "dance",
+            "drunk",
+            "pout",
+            "bonk"
+        ],
+        "waifu_commands": [
+            "zero two",
+            "freyja wion",
+            "schwi",
+            "Bael",
+            "miku",
+            "astolfo",
+            "holo"
+        ],
+        "misc": [
+            "axl",
+            "eject <user>"
+        ],
+        "conversions": [
+            "lbtokg",
+            "kgtolb",
+            "ftoc",
+            "ctof",
+            "mtoft",
+            "fttom",
+            "utodv",
+            "utobn"
+        ]
+    }
+}
