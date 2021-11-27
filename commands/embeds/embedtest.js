@@ -34,45 +34,6 @@ module.exports = class embedtest extends commando.Command {
     }
 
     async run(msg, {number}) {
-        //get the full html
-        const {data } = await axios.get("https://www.artideasgenerator.com/appearance.php");
-        //start cheerio
-        const $ = cheerio.load(data);
-        //find all of the en class's text
-        const item = $(".en").text()
-        //remove other html tags and split on the new line
-        const arrAttb = item.replace(/<\/?[^>]+(>|$)/g, "").split("\n")
-        //remove white spaces and unnessery data
-        const trimmedArrAtrb = [];
-        arrAttb.forEach(function(atr, i) {
-            if(atr.trim() == '' || atr == null || i == 0 || i == arrAttb.length - 1){
-                return;
-            }
-            return trimmedArrAtrb.push(atr.trim())
-        })
 
-        //create the description string
-        let discription = 
-        `${trimmedArrAtrb[1]}\n 
-        ${trimmedArrAtrb[2]}\n
-        ${trimmedArrAtrb[3]}\n
-        ${trimmedArrAtrb[4]}\n
-        ${trimmedArrAtrb[5]}\n
-        ${trimmedArrAtrb[6]}\n
-        ${trimmedArrAtrb[7]}\n
-        ${trimmedArrAtrb[8]}\n
-        ${trimmedArrAtrb[9]}\n
-        ${trimmedArrAtrb[10]}\n
-        **${trimmedArrAtrb[11]}**\n
-        ${trimmedArrAtrb[12]}\n
-        ${trimmedArrAtrb[13]}\n
-        ${trimmedArrAtrb[14]}`
-        
-        //create embed
-        embed
-        .setTitle(trimmedArrAtrb[0])
-        .setDescription(discription)
-
-        msg.say(embed)
     }
 };
