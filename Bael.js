@@ -43,6 +43,7 @@ client
                 ["reactiongifs", "reaction commands"],
                 ["gacha", "gacha"],
                 ["fun", "fun commands"],
+                ["artprompts", "artprompts"]
             ])
             .registerDefaultTypes().registerDefaultGroups().registerDefaultCommands({
                 unknownCommand: false,
