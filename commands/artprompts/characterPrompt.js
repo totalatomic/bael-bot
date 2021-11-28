@@ -1,7 +1,7 @@
 const commando = require("@iceprod/discord.js-commando");
+const axios = require("axios");
+const cheerio = require('cheerio');
 const { MessageEmbed, MessageAttachment } = require("discord.js");
-const {promptFetcher} = require('./artpromptsController');
-
 
 module.exports = class characterPrompt extends commando.Command {
     constructor(client) {
@@ -10,15 +10,19 @@ module.exports = class characterPrompt extends commando.Command {
             memberName: "characterprompt",
             group: "artprompts",
             description: "description",
-            throttle: {
-                uses: 1,
-                time: 20
-            }
         });
     }
     async run(msg, { args }) {
         let embed = new MessageEmbed;
-        var arrAttb = await promptFetcher('/appearance.php')
+        //get the full html
+        const { data } = await axios.get("https://www.artideasgenerator.com/appearance.php");
+        //start cheerio
+        const $ = cheerio.load(data);
+        //find all of the en class's text
+        const item = $(".en").text()
+        //remove other html tags and split on the new line
+        const arrAttb = item.replace(/<\/?[^>]+(>|$)/g, "").split("\n")
+        //remove white spaces and unnessery data
         var trimmedArrAtrb = [];
         arrAttb.forEach(function (atr, i) {
             if (atr.trim() == '' || atr == null || i == 0 || i == arrAttb.length - 1) {
