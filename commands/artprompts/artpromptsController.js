@@ -8,8 +8,10 @@ exports.fetchPrompt = async function (params, htmlclass) {
     const $ = cheerio.load(data);
     //find all of the en class's text
     const item = $(`.${htmlclass}`).text()
+    console.log(item)
     //remove other html tags and split on the new line
     const arrAttb = item.replace(/<\/?[^>]+(>|$)/g, "").split("\n")
+    console.log(arrAttb)
     //remove white spaces and unnessery data
     var trimmedArrAtrb = [];
     arrAttb.forEach(function (atr, i) {
