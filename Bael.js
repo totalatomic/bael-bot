@@ -9,7 +9,7 @@ const { error } = require("console");
 const { MessageEmbed } = require("discord.js");
 
 const client = new commando.CommandoClient({
-    owner: '701740972714885140',
+    owner: '1064901093072588921',
     commandPrefix: config.prefix,
     disableMentions: "all"
 });
